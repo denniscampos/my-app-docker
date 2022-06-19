@@ -12,10 +12,14 @@ function App() {
       .catch((err) => console.log("error: ******** ", err));
   }, []);
 
+  useEffect(() => {
+    fetch("/home").then((res) => res.json()).then((data) => console.log(data)).catch((error) => console.log(error));
+  }, [])
+
   return (
     <div className="App">
       <h1>My default is better than react 🤷🏼‍♂️</h1>
-      <p>hi</p>
+      <p>hi world!</p>
       {data}
     </div>
   );
